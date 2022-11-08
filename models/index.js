@@ -3,21 +3,15 @@ const Dev = require('./Dev');
 const Move = require('./Move');
 
 User.hasMany(Dev, {
-  foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-Dev.belongsTo(User, {
-  foreignKey: 'user_id'
-});
+Dev.belongsTo(User);
 
 Dev.hasMany(Move, {
-  foreignKey: 'move_id',
   onDelete: 'CASCADE'
 });
 
-Move.belongsTo(Dev, {
-  foreignKey: 'user_id'
-});
+Move.belongsTo(Dev);
 
-module.exports = { User, Dev };
+module.exports = { User, Dev, Move};

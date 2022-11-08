@@ -5,12 +5,6 @@ class Dev extends Model {}
 
 Dev.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -18,7 +12,6 @@ Dev.init(
     level: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 1,
     },
     current_exp: {
       type: DataTypes.INTEGER,
@@ -41,20 +34,9 @@ Dev.init(
       type: DataTypes.ENUM('front-end','back-end'),
       allowNull: false,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
   },
   {
     sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'dev',
   }
 );
 
