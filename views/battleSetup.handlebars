@@ -1,0 +1,13 @@
+<h2>Select a Dev For Battle!</h2>
+<form action="" id="selectDev">
+    <input list="selectBattleDev" name="selectBattleDev" placeholder="Choose your Dev!">
+        <datalist id="selectBattleDev">
+            {{#each devs}}
+            <option value="/devs/{{id}}">{{name}}</option>
+            {{/each}}
+        </datalist>
+    <button>Select This Dev</button>
+</form>
+
+
+<script src="/js/battleSetup.js"></script>
