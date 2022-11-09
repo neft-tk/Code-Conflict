@@ -9,6 +9,9 @@ createDevForm.addEventListener("submit",e=>{
         hp:document.querySelector("#createDevHp").value,
         alignment:document.querySelector("#createDevAlignment").value,
     }
+
+    console.log(devObj);
+    
     fetch("/api/devs/",{
         method:"POST",
         body:JSON.stringify(devObj),
@@ -16,6 +19,9 @@ createDevForm.addEventListener("submit",e=>{
             "Content-Type":"application/json"
         }
     }).then(res=>{
+
+        console.log(res);
+        
         if(res.ok){
            location.reload()
         } else {
