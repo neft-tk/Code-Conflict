@@ -1,9 +1,10 @@
 <h2>Select a Dev For Battle!</h2>
 <form action="" id="selectDev">
-    <input list="selectBattleDev" name="selectBattleDev" placeholder="Choose your Dev!">
+    <input list="selectBattleDev" name="selectBattleDev" id="devOptions" placeholder="Choose your Dev!">
         <datalist id="selectBattleDev">
-            {{#each devs}}
-            <option value="/devs/{{id}}">{{name}}</option>
+            {{#each Devs}}
+            <option value="devs/{{id}}">{{name}}</option>
+            {{name}}
             {{/each}}
         </datalist>
     <button>Select This Dev</button>
