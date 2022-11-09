@@ -41,6 +41,7 @@ router.post('/login', async (req, res) => {
       req.session.logged_in = true;
       
       res.json({ user: userData, message: 'You are now logged in!' });
+      res.render("home");
     });
 
   } catch (err) {
@@ -54,8 +55,7 @@ router.post('/logout', (req, res) => {
       res.status(204).end();
     });
   } else {
-    res.status(404).end();
-  }
+    res.status(404).end();  }
 });
 
 module.exports = router;

@@ -1,0 +1,17 @@
+<h1>This is my profile page! Welcome back, {{name}}</h1>
+<h2>My Devs:</h2>
+{{#each devs}}
+    <div class="card">
+        <a href="/dev/{{id}}"><h3>{{name}}</h3></a>
+        <p>{{level}}</p>
+        <p>{{current_exp}}</p>
+        <p>{{alignment}}</p>
+        <p>{{hp}}</p>
+        <p>{{attack}}</p>
+        <p>{{speed}}</p>
+        <button class="delBtn" data-devId="{{id}}">Delete Me</button>
+        <hr>
+    </div>
+{{/each}}
+
+<script src="/js/profile.js"></script>

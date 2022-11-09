@@ -14,12 +14,6 @@ const seedDatabase = async () => {
 
   const devs = await Dev.bulkCreate(devData);
 
-  // for (const dev of devData) {
-  //   await Dev.create({
-  //     ...dev
-  //   });
-  // }
-
   process.exit(0);
 };
 
