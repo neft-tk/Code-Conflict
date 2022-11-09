@@ -12,6 +12,7 @@ Dev.init(
     level: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 1,
     },
     current_exp: {
       type: DataTypes.INTEGER,
@@ -31,7 +32,7 @@ Dev.init(
       allowNull: false,
     },
     alignment: {
-      type: DataTypes.ENUM('front-end','back-end'),
+      type: DataTypes.ENUM('Front-End','Back-End'),
       allowNull: false,
     },
   },
