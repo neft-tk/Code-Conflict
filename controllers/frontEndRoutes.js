@@ -39,6 +39,13 @@ router.get("/manageDev",(req,res)=>{
     res.render("dev")
 })
 
+router.get("/battleSetup",(req,res)=>{
+    if(!req.session.logged_in){
+        return res.redirect("/profile")
+    }
+    res.render("battleSetup")
+})
+
 router.get("/profile",(req,res)=>{
     if(!req.session.logged_in){
         return res.redirect("/login")
