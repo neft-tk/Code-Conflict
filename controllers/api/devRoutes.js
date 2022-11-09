@@ -15,7 +15,9 @@ router.get("/", (req, res) => {
 // Creates a dev based on the req.body (soon to be form input hopefully)
 router.post("/", async (req, res)=> {
     try {
-        const devData = await Dev.create(req.body);
+        const devData = await Dev.create({...req.body, 
+            UserId:req.session.user_id
+        });
 
         res.status(200).json(devData);
 
