@@ -3,6 +3,7 @@
 {{#each Devs}}
     <div class="card">
         <a href="/devs/{{id}}"><h3>{{name}}</h3></a>
+        <p>ID: {{id}}</p>
         <p>Level: {{level}}</p>
         <p>Current Experience Points: {{current_exp}}</p>
         <p>Alignment: {{alignment}}</p>
@@ -10,8 +11,16 @@
         <p>Attack: {{attack}}</p>
         <p>Speed: {{speed}}</p>
         <button class="delBtn" data-devId="{{id}}">Delete Me</button>
-        <hr>
     </div>
+    <h3>{{name}}'s Movelist:</h3>
+    {{#each Moves}}
+    <div class="card">
+        <p>Move Name: {{name}}</p>
+        <p>Power: {{power}}</p>
+        <p>Accuracy: {{accuracy}}</p>
+    </div>
+    {{/each}}
+    <hr>
 {{/each}}
 
 <script src="/js/profile.js"></script>

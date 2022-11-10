@@ -29,3 +29,34 @@ createDevForm.addEventListener("submit",e=>{
         }
     })
 })
+
+const createMoveForm = document.querySelector("#createMove");
+createMoveForm.addEventListener("submit",e=>{
+    e.preventDefault();
+    console.log('PREVENTED DEFAULT!')
+    const moveObj = {
+        name:document.querySelector("#createMoveName").value,
+        power:document.querySelector("#createMovePower").value,
+        accuracy:document.querySelector("#createMoveAccuracy").value,
+        DevId:document.querySelector("#chooseDev").value,
+    }
+
+    console.log(moveObj);
+    
+    fetch("/api/moves/",{
+        method:"POST",
+        body:JSON.stringify(moveObj),
+        headers:{
+            "Content-Type":"application/json"
+        }
+    }).then(res=>{
+
+        console.log(res);
+        
+        if(res.ok){
+           location.reload()
+        } else {
+            alert("trumpet sound")
+        }
+    })
+})
