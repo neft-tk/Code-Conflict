@@ -1,0 +1,39 @@
+{{!-- Contains the entire battle interface --}}
+<div id="battle-container">
+    {{!-- Contains the upper portion of the battle interface (enemy picture and stats + the battle console) --}}
+    <div id="battle-top-section">
+        <div id="battle-top-left">
+            {{!-- This section will contain limited information about the enemy --}}
+            <div id="enemy-stats">
+                <p id="enemy-level">LEVEL:</p>
+                <p id="enemy-hp">HP: </p>
+            </div>
+        </div>
+        {{!-- This sections will contain the console, showing messages when things happen.--}}
+        <div id="battle-top-right">
+            <div id="battle-console">
+            </div>
+        </div>
+    </div>
+    {{!-- Contains the lower portion of the battle interface (user moves/options + user stats) --}}
+    <div id="battle-bottom-section">
+        <div id="battle-bottom-left">
+            {{!-- This section contains all of the players options for moves. --}}
+            <div id="player-moves">
+                <div id="move1"></div>
+                <div id="move2"></div>
+                <div id="move3"></div>
+                <div id="move4"></div>
+            </div>
+        </div>
+        <div id="battle-bottom-right">
+            {{!-- This section will contain information about the player's dev. --}}
+            <div id="player-stats">
+                <p id="player-level">LEVEL: </p>
+                <p id="player-hp">HP: </p>
+                <p id="player-atk">ATK: </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/battle.js"></script>
