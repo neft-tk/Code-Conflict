@@ -1,10 +1,10 @@
-<h2>Select a Dev For Battle!</h2>
+<h2>Select a Dev For Battle, {{name}}!</h2>
 <form action="" id="selectDev">
     <label for="devOptions">Select A Dev</label>
     <input list="selectBattleDev" name="selectBattleDev" id="devOptions" placeholder="Choose your Dev!">
         <datalist id="selectBattleDev">
             {{#each Devs}}
-            <option value="devs/{{id}}">{{name}}</option>
+            <option value="{{id}}">{{name}}</option>
             {{name}}
             {{/each}}
         </datalist>
