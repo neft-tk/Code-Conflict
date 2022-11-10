@@ -53,7 +53,6 @@ function getPlayerDev() {
     }).catch(err => console.log(err))
 }
 
-
 /*
 Players will select their dev on this page,
 
