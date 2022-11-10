@@ -43,7 +43,17 @@ router.get("/battleSetup",(req,res)=>{
     if(!req.session.logged_in){
         return res.redirect("/profile")
     }
-    res.render("battleSetup")
+    User.findByPk(req.session.user_id,{
+        include:{
+            model: Dev,
+            include: Move,
+        },
+    }).then(userData=>{
+        const hbsData = userData.toJSON();
+        console.log(hbsData)
+        hbsData.logged_in=req.session.logged_in
+        res.render("battleSetup",hbsData)
+    })
 })
 
 router.get("/profile",(req,res)=>{
