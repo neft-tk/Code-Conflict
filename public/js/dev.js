@@ -25,7 +25,7 @@ createDevForm.addEventListener("submit",e=>{
         if(res.ok){
            location.reload()
         } else {
-            alert("trumpet sound")
+            alert("Your request was not completed.")
         }
     })
 })
@@ -42,7 +42,17 @@ createMoveForm.addEventListener("submit",e=>{
     }
 
     console.log(moveObj);
+    console.log(parseInt(moveObj.accuracy, 10) + parseInt(moveObj.power, 10));
     
+    if ((parseInt(moveObj.accuracy, 10) + parseInt(moveObj.power, 10)) !== 10) {
+        alert("Please make sure your Move's stats total to 10 points.");
+        location.reload();
+        return
+    } else {
+        alert("Move successfully created!");
+    };
+
+
     fetch("/api/moves/",{
         method:"POST",
         body:JSON.stringify(moveObj),
