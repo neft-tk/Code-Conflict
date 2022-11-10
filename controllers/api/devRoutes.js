@@ -12,6 +12,17 @@ router.get("/", (req, res) => {
     });
 });
 
+// Get one dev
+router.get("/:id", (req, res) => {
+  Dev.findByPk(req.params.id)
+  .then((dev) => {
+    res.json(dev);
+  })
+  .catch((err) => {
+    res.status(500).json({ msg: "an error occured.", err });
+  });
+})
+
 // Creates a dev based on the req.body (soon to be form input hopefully)
 router.post("/", async (req, res) => {
   try {

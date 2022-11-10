@@ -1,5 +1,6 @@
 <h2>Select a Dev For Battle!</h2>
 <form action="" id="selectDev">
+    <label for="devOptions">Select A Dev</label>
     <input list="selectBattleDev" name="selectBattleDev" id="devOptions" placeholder="Choose your Dev!">
         <datalist id="selectBattleDev">
             {{#each Devs}}
@@ -7,8 +8,8 @@
             {{name}}
             {{/each}}
         </datalist>
-    <button>Select This Dev</button>
-</form>
+    <button id="startBattle">Battle</button>
 
+</form>
 
 <script src="/js/battleSetup.js"></script>

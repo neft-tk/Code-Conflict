@@ -1,12 +1,16 @@
-{{!-- Contains the entire battle interface --}}
+{{!-- Contains the entire /battle interface --}}
 <div id="battle-container">
     {{!-- Contains the upper portion of the battle interface (enemy picture and stats + the battle console) --}}
     <div id="battle-top-section">
         <div id="battle-top-left">
             {{!-- This section will contain limited information about the enemy --}}
             <div id="enemy-stats">
-                <p id="enemy-level">LEVEL:</p>
-                <p id="enemy-hp">HP: </p>
+                    <p id="enemy-level">LEVEL:</p>
+                    <p id="enemy-hp">HP:</p>
+            </div>
+            {{!-- Visual representation of the enemy. --}}
+            <div id="enemy-image">
+                <img src="#" alt="#">
             </div>
         </div>
         {{!-- This sections will contain the console, showing messages when things happen.--}}
