@@ -30,6 +30,7 @@ Dev.init(
     hp: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 20,
     },
     alignment: {
       type: DataTypes.ENUM('Front-End','Back-End'),
