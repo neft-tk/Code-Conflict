@@ -4,7 +4,7 @@
     <input list="selectBattleDev" name="selectBattleDev" id="devOptions" placeholder="Choose your Dev!">
         <datalist id="selectBattleDev">
             {{#each Devs}}
-            <option value="{{id}}">{{name}}</option>
+            <option value={{id}}>{{name}}</option>
             {{name}}
             {{/each}}
         </datalist>

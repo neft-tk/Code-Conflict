@@ -5,8 +5,8 @@
         <div id="battle-top-left">
             {{!-- This section will contain limited information about the enemy --}}
             <div id="enemy-stats">
-                    <p id="enemy-level">LEVEL:</p>
-                    <p id="enemy-hp">HP:</p>
+                    <p id="enemy-level">LEVEL: {{compDev.level}}</p>
+                    <p id="enemy-hp">HP: {{compDev.hp}}</p>
             </div>
             {{!-- Visual representation of the enemy. --}}
             <div id="enemy-image">
@@ -24,6 +24,7 @@
         <div id="battle-bottom-left">
             {{!-- This section contains all of the players options for moves. --}}
             <div id="player-moves">
+                {{!-- TODO: GET MOVES ATTACHED TO OBJECT BEING PASSED IN --}}
                 <div id="move1"></div>
                 <div id="move2"></div>
                 <div id="move3"></div>
@@ -33,9 +34,9 @@
         <div id="battle-bottom-right">
             {{!-- This section will contain information about the player's dev. --}}
             <div id="player-stats">
-                <p id="player-level">LEVEL: </p>
-                <p id="player-hp">HP: </p>
-                <p id="player-atk">ATK: </p>
+                <p id="player-level">LEVEL: {{userDev.level}}</p>
+                <p id="player-hp">HP: {{userDev.hp}}</p>
+                <p id="player-atk">ATK: {{userDev.attack}}</p>
             </div>
         </div>
     </div>
