@@ -56,6 +56,14 @@ router.get("/battleSetup",(req,res)=>{
     })
 })
 
+router.get("/battle", (req, res) => {
+    if(!req.session.logged_in) {
+        return res.redirect("/profile")
+    }
+    const combatants = req.session
+    res.render("battle", combatants)
+})
+
 router.get("/profile",(req,res)=>{
     if(!req.session.logged_in){
         return res.redirect("/login")
