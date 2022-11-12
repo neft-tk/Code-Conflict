@@ -1,8 +1,28 @@
 body {
-    background:salmon;
+    background:lightcyan;
 }
 h2 {
     text-align: center;
+}
+header{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 80px;
+  background:  #305A72;
+  border: 3px solid   #FAFAFA;
+} 
+  
+a{
+  font-size: 30px;
+  color: #FAFAFA;
+  font-weight: 400;
+  display: inline;
+  line-height: 50px ;
+  word-spacing: 100px;
+  padding:20px;
+  text-decoration: none;
+  
 }
  form {
 	max-width: 450px;
@@ -43,3 +63,25 @@ input[type=text], select {
   }
 
   
+  .card{
+    max-width: 450px; 
+	background: #FAFAFA;
+	padding: 30px;
+	margin: 50px auto;
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 10px;
+	border: 6px solid brown;
+}
+  .delBtn{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  p{
+    font-size: larger;
+
+  }
