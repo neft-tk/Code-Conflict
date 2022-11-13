@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Dev } = require("../../models");
+const { User, Dev, Move } = require("../../models");
 
 //Show all devs in json form
 router.get("/", (req, res) => {
@@ -14,7 +14,9 @@ router.get("/", (req, res) => {
 
 // Get one dev
 router.get("/:id", (req, res) => {
-  Dev.findByPk(req.params.id)
+  Dev.findByPk(req.params.id, {
+    include: [Move]
+  })
   .then((dev) => {
     res.json(dev);
   })
