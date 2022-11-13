@@ -70,6 +70,8 @@ function getPlayerDev() {
 
 // This function bundles the final battling devs in an object that is sent to our battle routes in a post request.
 function finalizePlayers(userDev, compDev) {
+    localStorage.setItem("userDev", JSON.stringify(userDev));
+    localStorage.setItem("compDev", JSON.stringify(compDev));
     fetch("/api/battle/start", {
         method: "POST",
         body: JSON.stringify({ userDev, compDev }),

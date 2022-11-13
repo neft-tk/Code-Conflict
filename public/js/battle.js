@@ -5,23 +5,25 @@ const enemyHp = document.getElementById("enemy-Hp");
 const enemyImage = document.getElementById("enemy-Image");
 // TEXT CONSOLE
 const battleConsole = document.getElementById("battle-console");
-// USER MOVES
-const moveOne = document.getElementById("move1");
-const moveTwo = document.getElementById("move2");
-const moveThree = document.getElementById("move3");
-const moveFour = document.getElementById("move4");
 // USER STATS
 const playerLevel = document.getElementById("player-level");
 const playerHp = document.getElementById("player-hp");
 const playerAtk = document.getElementById("player-atk");
-
-console.log("!!!")
+// Session Data
+let userDev = JSON.parse(localStorage.getItem("userDev"));
+let compDev = JSON.parse(localStorage.getItem("compDev"));
 
 // The battle object will contain both devs information and methods to facilitate the battle
 class Battle {
-    constructor(player1, player2) {
-      this.player1 = player1;
-      this.player2 = player2;
+    constructor(allyDev, enemyDev) {
+      // Both devs
+      this.allyDev = allyDev;
+      this.enemyDev = enemyDev;
+      // Battle Methods
+      this.battleSummary = function () {
+        console.log(allyDev);
+        console.log(enemyDev);
+      }
     }
 
     // Reduces an hp bar by the amount of damage taken.
@@ -31,7 +33,9 @@ class Battle {
     }
   }
 
-const currentBattle = new Battle() 
+const currentBattle = new Battle(userDev, compDev) 
+
+currentBattle.battleSummary();
 
 /*
 PSEUDOCODE
