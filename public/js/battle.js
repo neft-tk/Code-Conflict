@@ -9,6 +9,7 @@ const battleConsole = document.getElementById("battle-console");
 const playerLevel = document.getElementById("player-level");
 const playerHp = document.getElementById("player-hp");
 const playerAtk = document.getElementById("player-atk");
+const playerMoves = document.getElementById("player-moves")
 // Session Data
 let userDev = JSON.parse(localStorage.getItem("userDev"));
 let compDev = JSON.parse(localStorage.getItem("compDev"));
@@ -31,10 +32,28 @@ class Battle {
         playerHit.hp -= damage;
         return playerHit.hp
     }
+
+    // Renders user buttons
+    battleStartUp(allyDev) {
+      for (let i = 0; i < userDev.Moves.length; i++) {
+        const element = userDev.Moves[i];
+
+      let btn = document.createElement("button");
+
+      btn.setAttribute("class", "btn");
+      btn.id = "move" + i;
+      btn.innerText = `${element.name}`;
+
+      playerMoves.append(btn)
+
+      }
+    }
   }
 
 const currentBattle = new Battle(userDev, compDev) 
 
+
+currentBattle.battleStartUp();
 currentBattle.battleSummary();
 
 /*
