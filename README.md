@@ -20,3 +20,11 @@ Users will be able to create an account and access the game where they can play 
 ## Usage
 
 No installation required, the site is hosted [live!](https://www.google.com/)
+
+## Credits
+
+[Joe Dixon](https://github.com/joerdixon), [Erik Buss](https://github.com/neft-tk), and [Pooja Agarwal](https://github.com/mypooja)
+
+## License
+
+N/A
