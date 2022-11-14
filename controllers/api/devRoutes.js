@@ -51,7 +51,7 @@ router.put('/:id', (req, res) => {
     },
     {
       where: {
-        isbn: req.params.id,
+        id: req.params.id,
       },
     }
   )
