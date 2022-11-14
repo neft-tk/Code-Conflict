@@ -6,7 +6,7 @@ const form = document.getElementById("form");
 // Create a socket pointed at where we want to host it.
 // This is the connection between the two Socket.io packages (serverside and client)
 // ???????????????????????????????
-const socket = io("https://code-conflict.herokuapp.com:8000")
+const socket = io();
 // When somebody connects to the socket, print a connection message to chatspace with their socket id.
 socket.on("connect", () => {
     displayMessage(`${socket.id} has joined the chatroom`)
