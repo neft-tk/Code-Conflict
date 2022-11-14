@@ -1,0 +1,111 @@
+:root {
+  /* FONTS */
+  --heading-font: 'Bebas Neue', cursive;
+  --paragraph-font: 'Poppins', sans-serif;
+  --console-font: "lucida console";
+}
+
+body {
+  background: lightcyan;
+  font-family: var(--paragraph-font);
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+h2 {
+  text-align: center;
+}
+
+header {
+  /* Layout */
+  height: 7vh;
+  /* Deco */
+  list-style-type: none;
+  border: 3px solid #FAFAFA;
+  border-radius: 1vw;
+  background: #305A72;
+  font-family: var(--heading-font);
+  /* Flex Settings */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+a {
+  font-size: 30px;
+  color: #FAFAFA;
+  font-weight: 400;
+  display: inline;
+  line-height: 50px;
+  padding: 1vh;
+  text-decoration: none;
+}
+
+form {
+  max-width: 450px;
+  background: #FAFAFA;
+  padding: 30px;
+  margin: 50px auto;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  border: 6px solid #305A72;
+}
+
+input[type=text],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#btn {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.card {
+  max-width: 450px;
+  background: #FAFAFA;
+  padding: 30px;
+  margin: 50px auto;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  border: 6px solid brown;
+}
+
+.delBtn {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+footer {
+  height: 5vh;
+}
