@@ -13,15 +13,20 @@ const PORT = process.env.PORT || 3000;
 
 // Create our Socket.io instance serverside with port and options object
 // ???????????????????????????????
-const io = require("socket.io")(8000, {
-  // Options object telling cors that its ok if people connect via 8080 even though we are hosted on 3000
-  cors: {
-      origin: ["https://code-conflict.herokuapp.com/"],
-  },
-}
-);
+// const io = require("socket.io")(PORT, {
+//   // Options object telling cors that its ok if people connect via 8080 even though we are hosted on 3000
+//   cors: {
+//       origin: ["https://code-conflict.herokuapp.com/"],
+//   },
+// }
+// );
 
-// app.use(cors())
+// MIDDLEWARE
+app.use(express.static("public"))
+
+const hbs = exphbs.create({});
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 const sess = {
   secret: process.env.SESSION_SECRET,
@@ -35,15 +40,7 @@ const sess = {
   })
 };
 
-let server = http.createServer(app);
-
-// let io = socketIo
-
-app.use(express.static("public"))
-
-const hbs = exphbs.create({});
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.use(cors());
 
 app.use(session(sess));
 
@@ -51,6 +48,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
+
+let server = http.createServer(app);
+const io = require("socket.io")(server)
+
+// app.use(cors())
+
+
+
+// let io = socketIo
+
 
 // On a succesfull connection to our declared port (8080)
 io.on("connection", socket => {
