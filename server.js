@@ -8,16 +8,20 @@ const exphbs = require('express-handlebars');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
+const cors = require("cors")
 const PORT = process.env.PORT || 3000;
 
 // Create our Socket.io instance serverside with port and options object
 // ???????????????????????????????
-const io = require("socket.io")(PORT, {
+const io = require("socket.io")(3001, {
   // Options object telling cors that its ok if people connect via 8080 even though we are hosted on 3000
   cors: {
-      origin: ["https://code-conflict.herokuapp.com/"],
+      origin: ["http://localhost:3000"],
   },
-});
+}
+);
+
+// app.use(cors())
 
 const sess = {
   secret: process.env.SESSION_SECRET,
@@ -52,6 +56,7 @@ app.use(routes);
 io.on("connection", socket => {
   // Console log the id was connected to
   console.log(socket.id)
+  socket.emit("connection-message", socket.id)
 
   // .on referencing the custom event we declared on the client side and any parameters we included.
   // In this case we are checking for message content and the room they intend the message for.
@@ -63,5 +68,5 @@ io.on("connection", socket => {
 })
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening on port: ${PORT}`));
+  server.listen(PORT, () => console.log(`Now listening on port: ${PORT}`));
 });
