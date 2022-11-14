@@ -26,6 +26,8 @@
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.25.5"
+    "sequelize": "^6.25.5",
+    "socket.io": "^4.5.3",
+    "socket.io-client": "^4.5.3"
   }
 }
