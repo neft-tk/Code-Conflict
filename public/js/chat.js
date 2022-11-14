@@ -6,10 +6,10 @@ const form = document.getElementById("form");
 // Create a socket pointed at where we want to host it.
 // This is the connection between the two Socket.io packages (serverside and client)
 // ???????????????????????????????
-const socket = io(process.env.PORT)
+const socket = io("http://localhost:3001")
 // When somebody connects to the socket, print a connection message to chatspace with their socket id.
 socket.on("connect", () => {
-    displayMessage(`Connected with id: ${socket.id}`)
+    displayMessage(`${socket.id} has joined the chatroom`)
 })
 
 socket.on("recieve-message", message => {
