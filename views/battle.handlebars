@@ -5,21 +5,18 @@
         <div id="battle-top-left">
             {{!-- This section will contain limited information about the enemy --}}
             <div id="enemy-stats">
+                    <p id="enemy-name">Evil {{compDev.name}}</p>
                     <p id="enemy-level">LEVEL: {{compDev.level}}</p>
                     <p id="enemy-hp">HP: {{compDev.hp}}</p>
             </div>
             {{!-- Visual representation of the enemy. --}}
             <div id="enemy-image">
-                <img src="#" alt="#">
-            </div>
-            <div id="enemy-image">
-                <img src="#" alt="#">
+                <img src="\images\New Piskel.gif" alt="#">
             </div>
         </div>
         {{!-- This sections will contain the console, showing messages when things happen.--}}
         <div id="battle-top-right">
-            <div id="battle-console">
-            </div>
+            <div id="battle-console"></div>
         </div>
     </div>
     {{!-- Contains the lower portion of the battle interface (user moves/options + user stats) --}}
@@ -27,10 +24,6 @@
         <div id="battle-bottom-left">
             {{!-- This section contains all of the players options for moves. --}}
             <div id="player-moves">
-                {{!-- <div id="move1"></div>
-                <div id="move2"></div>
-                <div id="move3"></div>
-                <div id="move4"></div> --}}
             </div>
         </div>
         <div id="battle-bottom-right">
