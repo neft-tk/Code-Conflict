@@ -28,13 +28,19 @@ class Battle {
     }
     // attack is your dev stat, power is the move stat. Damage is based on the attack stat with a percent modifier from power
     // Reduces an hp bar by the amount of damage taken.
-    damageCalc(move, playerHit) {
-        let modifier = ((move.power) / 10)
+    // Logs what happened in the console.
+    damageCalc(move, playerHit, playerAttacking) {
+        const newP = document.createElement("p");
 
-        
-        let damage = Math.floor((userDev.attack * modifier) * 10)
+        let modifier = ((move.power) / 100)
+
+        let damage = Math.floor((userDev.attack * modifier) * 25)
         
         playerHit.hp -= damage;
+
+        newP.innerText = playerAttacking.name + " did " + damage + " to " + playerHit.name;
+        battleConsole.append(newP); 
+
         return playerHit.hp
     }
 
@@ -68,6 +74,60 @@ class Battle {
 
 const currentBattle = new Battle(userDev, compDev) 
 
+function checkHealth() {
+  if (compDev.hp <= 0) {
+    userDev.current_exp = userDev.current_exp + (compDev.level * 25);
+    if (userDev.current_exp = (userDev.level * 100)) {
+      let tempDevStats = {
+        level: userDev.level + 1,
+        hp: userDev.hp + 5,
+        attack: userDev.attack + 1,
+        speed: userDev.speed + 1,
+      }
+      alert("Congrats, your Dev leveled up!")
+      fetch(`/api/devs/${userDev.id}`, {
+        method: "POST",
+        body: ({
+          "level": tempDevStats.level,
+          "current_exp": 0,
+          "hp": tempDevStats.hp,
+          "attack": tempDevStats.attack,
+          "speed": tempDevStats.speed
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then((response) => response.json())  
+      fetch("/profile").then(res=> {
+        if(res.ok){
+          window.location.href = "/profile"
+        } else {
+          alert("profile link didnt work")
+        }
+      })
+    }
+  } else if (userDev.hp <= 0){
+    alert("Sorry, you lost! Try again :(")
+    fetch("/profile").then(res=> {
+      if(res.ok){
+        window.location.href = "/profile"
+      } else {
+        alert("profile link didnt work")
+      }
+    })
+  }
+}
+
+function winBattle() {
+  alert("Congrats, you won!")
+
+}
+
+function loseBattle() {
+
+}
+
+
 function roundStart(e, selectedMove) {
   // console.log(e.target.innerText);
   // console.log(selectedMove);
@@ -76,13 +136,13 @@ function roundStart(e, selectedMove) {
 
   //determine which dev is faster
   if (userDev.speed >= compDev.speed) {
-    currentBattle.damageCalc(selectedMove, compDev)
-    console.log(compDev);  
+    currentBattle.damageCalc(selectedMove, compDev, userDev)
+    currentBattle.damageCalc(enemyAttack, userDev, compDev)
+    checkHealth();
   } else {
-    currentBattle.damageCalc(enemyAttack, userDev)
-    console.log(enemyAttack);
-    
-    console.log(userDev);    
+    currentBattle.damageCalc(selectedMove, compDev, userDev)
+    currentBattle.damageCalc(enemyAttack, userDev, compDev)   
+    checkHealth();
   }
 };
 
