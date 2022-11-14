@@ -5,7 +5,8 @@ const form = document.getElementById("form");
 
 // Create a socket pointed at where we want to host it.
 // This is the connection between the two Socket.io packages (serverside and client)
-const socket = io("http://localhost:3001")
+// ???????????????????????????????
+const socket = io(process.env.PORT)
 // When somebody connects to the socket, print a connection message to chatspace with their socket id.
 socket.on("connect", () => {
     displayMessage(`Connected with id: ${socket.id}`)
@@ -14,6 +15,10 @@ socket.on("connect", () => {
 socket.on("recieve-message", message => {
     displayMessage(message);
 })
+
+socket.on("connect_error", (err) => {
+    console.log(`connect_error due to ${err.message}`);
+});
 
 // "custom-event" is an arbitrary name, anything could go here, same with the parameters. General shape of an emit.
 // socket.emit("custom-event", 25, "Socketlearn", {a:"a"})
