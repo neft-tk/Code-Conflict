@@ -52,7 +52,9 @@ class Battle {
     }
 
     // Renders user buttons which will load the start of the round with the move based on the player's choice.
-    battleStartUp(allyDev) {
+    battleStartUp() {
+      console.log(userDev);
+      
       for (let i = 0; i < userDev.Moves.length; i++) {
         const element = userDev.Moves[i];
 
@@ -80,19 +82,20 @@ function checkHealth() {
     if (userDev.current_exp = (userDev.level * 100)) {
       let tempDevStats = {
         level: userDev.level + 1,
-        hp: userDev.hp + 5,
+        hp: ((userDev.level * 5) + 20),
         attack: userDev.attack + 1,
         speed: userDev.speed + 1,
       }
+      console.log(tempDevStats);      
       alert("Congrats, your Dev leveled up!")
       fetch(`/api/devs/${userDev.id}`, {
-        method: "POST",
-        body: ({
-          "level": tempDevStats.level,
-          "current_exp": 0,
-          "hp": tempDevStats.hp,
-          "attack": tempDevStats.attack,
-          "speed": tempDevStats.speed
+        method: "PUT",
+        body: JSON.stringify({
+          level: tempDevStats.level,
+          current_exp: 0,
+          hp: tempDevStats.hp,
+          attack: tempDevStats.attack,
+          speed: tempDevStats.speed
         }),
         headers: {
           "Content-Type": "application/json"
@@ -118,14 +121,6 @@ function checkHealth() {
   }
 }
 
-function winBattle() {
-  alert("Congrats, you won!")
-
-}
-
-function loseBattle() {
-
-}
 
 
 function roundStart(e, selectedMove) {
@@ -137,10 +132,12 @@ function roundStart(e, selectedMove) {
   //determine which dev is faster
   if (userDev.speed >= compDev.speed) {
     currentBattle.damageCalc(selectedMove, compDev, userDev)
+    checkHealth();
     currentBattle.damageCalc(enemyAttack, userDev, compDev)
     checkHealth();
   } else {
     currentBattle.damageCalc(selectedMove, compDev, userDev)
+    checkHealth();
     currentBattle.damageCalc(enemyAttack, userDev, compDev)   
     checkHealth();
   }
