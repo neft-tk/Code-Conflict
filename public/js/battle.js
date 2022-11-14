@@ -52,7 +52,9 @@ class Battle {
     }
 
     // Renders user buttons which will load the start of the round with the move based on the player's choice.
-    battleStartUp(allyDev) {
+    battleStartUp() {
+      console.log(userDev);
+      
       for (let i = 0; i < userDev.Moves.length; i++) {
         const element = userDev.Moves[i];
 
@@ -80,7 +82,7 @@ function checkHealth() {
     if (userDev.current_exp = (userDev.level * 100)) {
       let tempDevStats = {
         level: userDev.level + 1,
-        hp: tempDevStats.level * 5,
+        hp: ((userDev.level * 5) + 20),
         attack: userDev.attack + 1,
         speed: userDev.speed + 1,
       }

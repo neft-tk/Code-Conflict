@@ -59,7 +59,7 @@ function getRandomDevStats() {
 }
 
 function getPlayerDev() {
-    // Eventually this will return a dev based on player input.
+    // Eventually this will return a dev based on player input.    
     fetch(`/api/devs/${devPlaceholder}`)
         .then((response) => response.json())
         .then((playerChosenDev) => {
@@ -70,6 +70,8 @@ function getPlayerDev() {
 
 // This function bundles the final battling devs in an object that is sent to our battle routes in a post request.
 function finalizePlayers(userDev, compDev) {
+    console.log(userDev);
+    
     localStorage.setItem("userDev", JSON.stringify(userDev));
     localStorage.setItem("compDev", JSON.stringify(compDev));
     fetch("/api/battle/start", {
