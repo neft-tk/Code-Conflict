@@ -9,7 +9,7 @@ const battleConsole = document.getElementById("battle-console");
 const playerLevel = document.getElementById("player-level");
 const playerHp = document.getElementById("player-hp");
 const playerAtk = document.getElementById("player-atk");
-const playerMoves = document.getElementById("player-moves")
+const playerMoveList = document.getElementById("player-moves")
 // Session Data
 let userDev = JSON.parse(localStorage.getItem("userDev"));
 let compDev = JSON.parse(localStorage.getItem("compDev"));
@@ -26,14 +26,26 @@ class Battle {
         console.log(enemyDev);
       }
     }
-
+    // attack is your dev stat, power is the move stat. Damage is based on the attack stat with a percent modifier from power
     // Reduces an hp bar by the amount of damage taken.
-    damageCalc(damage, playerHit) {
+    damageCalc(move, playerHit) {
+        let modifier = ((move.power) / 10)
+
+        
+        let damage = Math.floor((userDev.attack * modifier) * 10)
+        
         playerHit.hp -= damage;
         return playerHit.hp
     }
 
-    // Renders user buttons
+    enemyMove() {
+      let numRandom = Math.floor(Math.random() * compDev.Moves.length);
+      console.log(compDev.Moves[numRandom]);
+      
+      return compDev.Moves[numRandom];
+    }
+
+    // Renders user buttons which will load the start of the round with the move based on the player's choice.
     battleStartUp(allyDev) {
       for (let i = 0; i < userDev.Moves.length; i++) {
         const element = userDev.Moves[i];
@@ -43,14 +55,36 @@ class Battle {
       btn.setAttribute("class", "btn");
       btn.id = "move" + i;
       btn.innerText = `${element.name}`;
+      btn.addEventListener("click", function(e) {
+        let selectedMove = element
+        roundStart(e, selectedMove);
+      })
 
-      playerMoves.append(btn)
+      playerMoveList.append(btn)
 
       }
     }
   }
 
 const currentBattle = new Battle(userDev, compDev) 
+
+function roundStart(e, selectedMove) {
+  // console.log(e.target.innerText);
+  // console.log(selectedMove);
+  // console.log(compDev.speed);
+  let enemyAttack = currentBattle.enemyMove();
+
+  //determine which dev is faster
+  if (userDev.speed >= compDev.speed) {
+    currentBattle.damageCalc(selectedMove, compDev)
+    console.log(compDev);  
+  } else {
+    currentBattle.damageCalc(enemyAttack, userDev)
+    console.log(enemyAttack);
+    
+    console.log(userDev);    
+  }
+};
 
 
 currentBattle.battleStartUp();
