@@ -1,13 +1,23 @@
 <h1>Code Conflict: The Battle for Fullstack!</h1>
 <hr>
-<p>In Code Conflict: The Battle for Fullstack, you take on the role as a manager for a team of Developers. Your goal is to fight for control over the "Fullstack," representing either the Front-End or Back-End side of development.</p>
+<p>In Code Conflict: The Battle for Fullstack, you take on the role as a manager for a team of Developers. Your goal is
+    to fight for control over the "Fullstack," representing either the Front-End or Back-End side of development.</p>
 <p>Create custom Devs with custom Moves, and assign them an alignment as either a Front-End or Back-End developer.</p>
 <br>
 <br>
 <br>
 <h3>Future Updates:</h3>
 <ul>
-    <li>Market System/Shop: Players will win cookies upon winning battles, which they can use to buy items from the shop or from other players.</li>
+    <li>Market System/Shop: Players will win cookies upon winning battles, which they can use to buy items from the shop
+        or from other players.</li>
     <hr>
     <li>Complex Move Creation: Moves can have "custom" special effects based on a set of premade effects.</li>
 </ul>
+<div id="chatspace"></div>
+<form id="form">
+<label for="message-input">Chat</label>
+<input type="text" id="message-input">
+<button type="submit" id="send-button">Send</button>
+</form>
+<script src="https://cdn.socket.io/4.5.3/socket.io.min.js" integrity="sha384-WPFUvHkB1aHA5TDSZi6xtDgkF0wXJcIIxXhC6h8OT8EH3fC5PWro5pWJ1THjcfEi" crossorigin="anonymous"></script>
+<script src="/js/chat.js"></script>
