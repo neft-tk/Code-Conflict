@@ -12,4 +12,15 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Get all moves
+router.get("/", (req, res) => {
+  Move.findAll()
+    .then((moves) => {
+      res.json(moves);
+    })
+    .catch((err) => {
+      res.status(500).json({ msg: "an error occured.", err });
+    });
+});
+
 module.exports = router;
