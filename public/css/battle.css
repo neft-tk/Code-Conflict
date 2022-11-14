@@ -1,0 +1,157 @@
+:root {
+
+}
+
+/* MACRO BATTLE LAYOUT */
+
+#battle-container {
+    margin: 3vh 0;
+}
+
+#battle-top-section {
+    /* Layout */
+    height: 49vh;
+    width: 80vw;
+    margin: 0 auto;
+    /* Deco */
+    border: 1px solid black;
+    /* Flex Settings */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* ENEMY INFORMATION SECTION */
+#battle-top-left {
+    width: 67%;
+    height: 100%;
+    /* deco */
+    border: 1px solid black;
+    /* Flex Settings */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+#enemy-stats {
+    width: 80%;
+    height: 30%;
+    /* deco */
+    /* border: 1px solid black; */
+    /* Flex Settings */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#enemy-image {
+    width: 100%;
+    height: 70%;
+    /* deco */
+    /* border: 1px solid black; */
+    /* Flex Settings */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#enemy-image img {
+    width: 25%;
+}
+
+/* TEXT CONSOLE SECTION */
+#battle-top-right {
+    /* layout */
+    width: 33%;
+    height: 100%;
+    /* deco */
+    border: 1px solid black;
+    /* /* flex settings */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#battle-console {
+    /* Layout */
+    height: 95%;
+    width: 95%;
+    /* Deco */
+    background-color: black;
+    /* border: 1px solid black; */
+    /* Flex Settings */
+}
+
+#battle-bottom-section {
+    /* Layout */
+    height: 27vh;
+    width: 80vw;
+    margin: 0 auto;
+    /* Deco */
+    border: 1px solid black;
+    /* Flex Settings */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* USER MOVE SECTION */
+#battle-bottom-left {
+    /* Layout */
+    width: 67%;
+    height: 100%;
+    /* Deco */
+    border: 1px solid black;
+    /* Flex Settings */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#player-moves {
+    /* Layout */
+    width: 100%;
+    height: 80%;
+    /* Deco */
+    /* Flex Settings */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#player-moves button {
+    /* Layout */
+    width: 45%;
+    height: 45%;
+    /* Deco */
+    border-radius: 1vw;
+}
+
+/* USER STATS SECTION */
+#battle-bottom-right {
+    /* Layout */
+    width: 33%;
+    height: 100%;
+    /* Deco */
+    border: 1px solid black;
+    /* Flex Settings */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#player-stats {
+    /* Layout */
+    height: 80%;
+    /* Flex Settings */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
