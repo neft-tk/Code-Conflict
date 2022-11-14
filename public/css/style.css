@@ -1,40 +1,55 @@
 body {
     background:lightcyan;
 }
-h2 {
+h2 ,h1 {
     text-align: center;
+  
+    
 }
 header{
   list-style-type: none;
   margin: 0;
   padding: 0;
-  height: 80px;
+  height: 70px;
   background:  #305A72;
-  border: 3px solid   #FAFAFA;
+  border: 3px solid   #FAFAFA;top:0%
 } 
   
 a{
   font-size: 30px;
   color: #FAFAFA;
   font-weight: 400;
-  display: inline;
+  text-align: center;
   line-height: 50px ;
   word-spacing: 100px;
-  padding:20px;
+  padding:60px 70px;
+  margin-bottom: 20px;
   text-decoration: none;
+  
+}
+#logoutBtn{
+  width: 20%;
+    padding: 15px 20px;
+    margin: 12px 8px;
+    
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: larger;
+    float:right;
   
 }
  form {
 	max-width: 450px;
 	background: #FAFAFA;
-	padding: 30px;
-	margin: 50px auto;
+	padding: 5px;
+	margin: 0px auto;
 	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-	border-radius: 10px;
+	border-radius: 8px;
 	border: 6px solid #305A72;
 }
 
-input[type=text], select {
+input[type=text],input[type=password] ,select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -43,45 +58,94 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
   }
-  input[type=password], select {
+ #createDevName, #createDevAlignment,input[type=number] ,select {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 5px 20px;
+    margin: 4px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
   }
-  #btn{
+  #btn ,#startBattle{
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 8px 20px;
+    margin: 4px 0;
     display: inline-block;
     border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: large;
   }
 
   
   .card{
     max-width: 450px; 
 	background: #FAFAFA;
-	padding: 30px;
-	margin: 50px auto;
+	padding: 10px;
+	margin: 0px auto;
 	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
 	border-radius: 10px;
-	border: 6px solid brown;
+	border: 6px solid #305A72;;
 }
   .delBtn{
-    width: 30%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: larger;
   }
   p{
     font-size: larger;
 
+  }
+  footer{
+  
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color:#305A72 ;
+    color: white;
+    text-align: center;
+ }
+ .homepage{
+  max-width: 450px; 
+	background: #FAFAFA;
+	padding: 20px;
+	margin: 0px auto;
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 10px;
+	border: 6px solid #305A72;
+  font-size: large;
+}
+#devOptions {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+label{
+  font-size: larger;
+  
+}
+#btn1{
+    width: 100%;
+    padding: 3px 20px;
+    margin: 1px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: medium;
+  }
+  h3{
+    margin: 0px;
   }

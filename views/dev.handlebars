@@ -1,9 +1,11 @@
 <h2>Create a New Dev</h2>
-<p>Dev Creation Rules:</p>
-<p>Your Dev's Attack value will determine how much damage they do in battle. Moves that your Dev uses will determine how much damage is done after taking in the Move's Power into account.</p>
-<p>Your Dev's Speed value will determine which Dev will attack first. In a battle, both Dev's will select a Move at the same time, and whichever Dev has the highest Speed will attempt to attack first.</p>
-<p>Your Dev's Alignment acts as a faction that your Dev fights for. When your Dev wins their fight, that Dev will earn an honor point for their aligned faction.</p>
-<p>All Dev's start out at Level 1 with 0 Experience and 20 Health Points. When creating your Dev, you have 10 stat points that you can distribute between your Dev's Power and Speed.</p>
+<h3>Dev Creation Rules:</h3>
+<ul class="rules">
+<li>Your Dev's Attack value will determine how much damage they do in battle. Moves that your Dev uses will determine how much damage is done after taking in the Move's Power into account.</li>
+<li>Your Dev's Speed value will determine which Dev will attack first. In a battle, both Dev's will select a Move at the same time, and whichever Dev has the highest Speed will attempt to attack first.</li>
+<li>Your Dev's Alignment acts as a faction that your Dev fights for. When your Dev wins their fight, that Dev will earn an honor point for their aligned faction.</li>
+<li>All Dev's start out at Level 1 with 0 Experience and 20 Health Points. When creating your Dev, you have 10 stat points that you can distribute between your Dev's Power and Speed.</li>
+</ul>
 <form action="" id="createDev">
     <input type="text" name="createDevName" id="createDevName" placeholder="Insert Dev Name Here!">
     <input type="number" name="createDevAttack" id="createDevAttack" placeholder="Dev Attack Value">
@@ -14,23 +16,25 @@
         <option value="Front-End">Front-End</option>
         <option value="Back-End">Back-End</option>
     </datalist>
-    <button>Create Dev</button>
+    <button id="btn1">Create Dev</button>
 </form>
-<hr>
+
 
 <h2>Create a New Move For a Dev</h2>
-<p>Move Creation Rules:</p>
-<p>Insert the chosen Dev's ID, the name of your new Move, and then choose a value between 1-10 for your Power and Accuracy.</p>
-<p>A Move's stats, Power and Accuracy, must equal 10. Trying to make a Move with stats that are higher or lower than 10 will not save.</p>
-<p>The 1-10 scale will act as the modifier for your Move. A Move with 1-Power and 9-Accuracy will almost certainly hit, it will just do less damage.</p>
-<p>On the opposite side, a Move with 9-Power and 1-Accuracy will do much more damage, but it will have a much lower chance of hitting.</p>
-<p>With having Moves balanced like this, you, the player, are able to make a moveset that will weigh risk/reward however you like.</p>
+<h3>Move Creation Rules:</h3>
+<ul class="rules">
+<li>1.Insert the chosen Dev's ID, the name of your new Move, and then choose a value between 1-10 for your Power and Accuracy.</li>
+<li>2.A Move's stats, Power and Accuracy, must equal 10. Trying to make a Move with stats that are higher or lower than 10 will not save.</li>
+<li>3.The 1-10 scale will act as the modifier for your Move. A Move with 1-Power and 9-Accuracy will almost certainly hit, it will just do less damage.</li>
+<li>4.On the opposite side, a Move with 9-Power and 1-Accuracy will do much more damage, but it will have a much lower chance of hitting.</li>
+<li>5.With having Moves balanced like this, you, the player, are able to make a moveset that will weigh risk/reward however you like.</li>
+</ul>
 <form action="" id="createMove">
     <input type="number" name="chooseDev" id="chooseDev" placeholder="Insert Your Dev's ID Number Here!">
     <input type="text" name="createMoveName" id="createMoveName" placeholder="Insert Move Name Here!">
     <input type="number" name="createMovePower" id="createMovePower" placeholder="Move Power Value">
     <input type="number" name="createMoveAccuracy" id="createMoveAccuracy" placeholder="Move Accuracy Value">
-    <button>Create Move</button>
+    <button id="btn1">Create Move</button>
 </form>
 
 <script src="/js/dev.js"></script>
