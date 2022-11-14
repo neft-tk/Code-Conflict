@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 const io = require("socket.io")(3001, {
   // Options object telling cors that its ok if people connect via 8080 even though we are hosted on 3000
   cors: {
-      origin: ["http://localhost:3000"],
+      origin: ["https://code-conflict.herokuapp.com/"],
   },
 });
 
