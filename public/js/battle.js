@@ -32,9 +32,9 @@ class Battle {
     damageCalc(move, playerHit, playerAttacking) {
         const newP = document.createElement("p");
 
-        let modifier = ((move.power) / 10)
+        let modifier = ((move.power) / 100)
 
-        let damage = Math.floor((userDev.attack * modifier) * 10)
+        let damage = Math.floor((userDev.attack * modifier) * 25)
         
         playerHit.hp -= damage;
 
@@ -78,11 +78,33 @@ function checkHealth() {
   if (compDev.hp <= 0) {
     userDev.current_exp = userDev.current_exp + (compDev.level * 25);
     if (userDev.current_exp = (userDev.level * 100)) {
-        userDev.level = userDev.level++;
-        userDev.hp = userDev.hp + 5;
-        userDev.attack = userDev.attack ++;
-        userDev.speed = userDev.speed ++;
-        alert("Congrats, your Dev leveled up!")
+      let tempDevStats = {
+        level: userDev.level + 1,
+        hp: userDev.hp + 5,
+        attack: userDev.attack + 1,
+        speed: userDev.speed + 1,
+      }
+      alert("Congrats, your Dev leveled up!")
+      fetch(`/api/devs/${userDev.id}`, {
+        method: "POST",
+        body: ({
+          "level": tempDevStats.level,
+          "current_exp": 0,
+          "hp": tempDevStats.hp,
+          "attack": tempDevStats.attack,
+          "speed": tempDevStats.speed
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then((response) => response.json())  
+      fetch("/profile").then(res=> {
+        if(res.ok){
+          window.location.href = "/profile"
+        } else {
+          alert("profile link didnt work")
+        }
+      })
     }
   } else if (userDev.hp <= 0){
     alert("Sorry, you lost! Try again :(")

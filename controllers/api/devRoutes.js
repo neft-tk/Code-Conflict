@@ -39,6 +39,28 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Update route, once exp gets calculated after a battle, if the Dev levels up then the new stats should get saved in the database.
+router.put('/:id', (req, res) => {
+  Dev.update(
+    {
+      level: req.body.level,
+      current_exp: req.body.current_exp,
+      attack: req.body.attack,
+      speed: req.body.speed,
+      hp: req.body.hp,
+    },
+    {
+      where: {
+        isbn: req.params.id,
+      },
+    }
+  )
+    .then((updatedDev) => {
+      res.json(updatedDev);
+    })
+    .catch((err) => res.json(err));
+});
+
 // Delete route for dev
 router.delete("/:id", async (req, res) => {
   if (!req.session.logged_in) {

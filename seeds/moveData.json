@@ -1,56 +1,56 @@
 [
     {
       "name": "Kick",
-      "power": 3,
-      "accuracy": 2,
+      "power": 7,
+      "accuracy": 3,
       "DevId":1
     },
     {
       "name": "Punch",
-      "power": 4,
+      "power": 9,
       "accuracy": 1,
       "DevId":1
     },
     {
       "name": "KickPunch",
-      "power": 2,
-      "accuracy": 3,
+      "power": 4,
+      "accuracy": 6,
       "DevId":1
     },
     {
       "name": "Kick2",
-      "power": 3,
-      "accuracy": 2,
+      "power": 7,
+      "accuracy": 3,
       "DevId":2
     },
     {
       "name": "Punch2",
-      "power": 4,
+      "power": 9,
       "accuracy": 1,
       "DevId":2
     },
     {
       "name": "KickPunch2",
-      "power": 2,
-      "accuracy": 3,
+      "power": 4,
+      "accuracy": 6,
       "DevId":2
     },
     {
       "name": "Kick2",
-      "power": 3,
-      "accuracy": 2,
+      "power": 7,
+      "accuracy": 3,
       "DevId":3
     },
     {
       "name": "Punch2",
-      "power": 4,
+      "power": 9,
       "accuracy": 1,
       "DevId":3
     },
     {
       "name": "KickPunch2",
-      "power": 2,
-      "accuracy": 3,
+      "power": 4,
+      "accuracy": 6,
       "DevId":3
     }
   ]
