@@ -4,11 +4,14 @@
 <p>Your Dev's Speed value will determine which Dev will attack first. In a battle, both Dev's will select a Move at the same time, and whichever Dev has the highest Speed will attempt to attack first.</p>
 <p>Your Dev's Alignment acts as a faction that your Dev fights for. When your Dev wins their fight, that Dev will earn an honor point for their aligned faction.</p>
 <p>All Dev's start out at Level 1 with 0 Experience and 20 Health Points. When creating your Dev, you have 10 stat points that you can distribute between your Dev's Power and Speed.</p>
-<form action="" id="createDev">
+<form class="creationForm" action="" id="createDev">
+    <label for="createDevName">Your New Dev's Name:</label>
     <input type="text" name="createDevName" id="createDevName" placeholder="Insert Dev Name Here!">
+    <label for="createDevAttack">Your New Dev's Attack:</label>
     <input type="number" name="createDevAttack" id="createDevAttack" placeholder="Dev Attack Value">
+    <label for="createDevSpeed">Your New Dev's Speed:</label>
     <input type="number" name="createDevSpeed" id="createDevSpeed" placeholder="Dev Speed Value">
-    {{!-- <input type="number" name="createDevHp" id="createDevHp" placeholder="Dev Healthpoints Value"> --}}
+    <label for="createDevAlignment">Your New Dev's Alignment:</label>
     <input list="devAlignmentOptions" id="createDevAlignment" name="createDevAlignment" placeholder="Dev Alignment">
     <datalist id="devAlignmentOptions">
         <option value="Front-End">Front-End</option>
@@ -25,10 +28,20 @@
 <p>The 1-10 scale will act as the modifier for your Move. A Move with 1-Power and 9-Accuracy will almost certainly hit, it will just do less damage.</p>
 <p>On the opposite side, a Move with 9-Power and 1-Accuracy will do much more damage, but it will have a much lower chance of hitting.</p>
 <p>With having Moves balanced like this, you, the player, are able to make a moveset that will weigh risk/reward however you like.</p>
-<form action="" id="createMove">
-    <input type="number" name="chooseDev" id="chooseDev" placeholder="Insert Your Dev's ID Number Here!">
+<form class="creationForm" action="" id="createMove">
+    <label for="devOptions">Select Your Dev:</label>
+    <input list="selectBattleDev" name="selectBattleDev" id="devOptions" placeholder="Choose your Dev!">
+        <datalist id="selectBattleDev">
+            {{#each Devs}}
+            <option value={{id}}>{{name}}</option>
+            {{name}}
+            {{/each}}
+        </datalist>
+    <label for="createMoveName">Your New Move's name:</label>
     <input type="text" name="createMoveName" id="createMoveName" placeholder="Insert Move Name Here!">
+    <label for="createMovePower">Your New Move's Power:</label>
     <input type="number" name="createMovePower" id="createMovePower" placeholder="Move Power Value">
+    <label for="createMoveAccuracy">Your New Move's Accuracy:</label>
     <input type="number" name="createMoveAccuracy" id="createMoveAccuracy" placeholder="Move Accuracy Value">
     <button>Create Move</button>
 </form>
