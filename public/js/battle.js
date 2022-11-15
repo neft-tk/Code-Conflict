@@ -1,4 +1,3 @@
-// DOM SELECTORS
 // ENEMY DISPLAY
 const enemyLevel = document.getElementById("enemy-level");
 const enemyHp = document.getElementById("enemy-Hp");
@@ -26,21 +25,34 @@ class Battle {
         console.log(enemyDev);
       }
     }
+
+    // Accuracy system: checks to see if a move hit based on it's accuracy
+    accuracyCheck(selectedMove) {
+      let accuracyMove = (selectedMove.accuracy + (Math.floor(Math.random() * 11) + 1))
+     
+      if (accuracyMove <= 5) {
+        return false
+      } else {
+        return true
+      }
+    }
+
     // attack is your dev stat, power is the move stat. Damage is based on the attack stat with a percent modifier from power
     // Reduces an hp bar by the amount of damage taken.
     // Logs what happened in the console.
     damageCalc(move, playerHit, playerAttacking) {
         const newP = document.createElement("p");
-
         let modifier = ((move.power) / 100)
-
         let damage = Math.floor((userDev.attack * modifier) * 25)
         
-        playerHit.hp -= damage;
-
-        newP.innerText = playerAttacking.name + " did " + damage + " to " + playerHit.name;
-        battleConsole.append(newP); 
-
+        if(currentBattle.accuracyCheck(move)) {
+          playerHit.hp -= damage;
+          newP.innerText = playerAttacking.name + " did " + damage + " to " + playerHit.name;
+          battleConsole.append(newP); 
+        } else {
+            newP.innerText = playerAttacking.name + "'s attack missed! No damage dealt to " + playerHit.name;
+            battleConsole.append(newP); 
+        }
         return playerHit.hp
     }
 
@@ -72,6 +84,7 @@ class Battle {
 
       }
     }
+
   }
 
 const currentBattle = new Battle(userDev, compDev) 
@@ -124,21 +137,18 @@ function checkHealth() {
 
 
 function roundStart(e, selectedMove) {
-  // console.log(e.target.innerText);
-  // console.log(selectedMove);
-  // console.log(compDev.speed);
   let enemyAttack = currentBattle.enemyMove();
 
   //determine which dev is faster
   if (userDev.speed >= compDev.speed) {
-    currentBattle.damageCalc(selectedMove, compDev, userDev)
+    currentBattle.damageCalc(selectedMove, compDev, userDev);
     checkHealth();
-    currentBattle.damageCalc(enemyAttack, userDev, compDev)
+    currentBattle.damageCalc(enemyAttack, userDev, compDev);
     checkHealth();
   } else {
-    currentBattle.damageCalc(selectedMove, compDev, userDev)
+    currentBattle.damageCalc(enemyAttack, userDev, compDev);
     checkHealth();
-    currentBattle.damageCalc(enemyAttack, userDev, compDev)   
+    currentBattle.damageCalc(selectedMove, compDev, userDev);
     checkHealth();
   }
 };
