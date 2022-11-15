@@ -1,14 +1,30 @@
+/* ROOT VARIABLES */
 :root {
   /* FONTS */
-  --heading-font: 'Bebas Neue', cursive;
-  --paragraph-font: 'Poppins', sans-serif;
+  --heading-font: 'Lato', cursive;
+  --paragraph-font: 'Consolas', sans-serif;
   --console-font: "lucida console";
+  /* COLORS */
+  --true-background-color: #222;
+  --semi-background-color: #333;
+  --font-color: #E6EAFF;
+  --accents: #00e21a;
+  /* SIZES */
+  --heading-size: ;
+  --paragraph-size: ;
+  --hero-size: ;
 }
 
+/* ELEMENT STYLING */
 body {
-  background: lightcyan;
+  background: var(--true-background-color);
+  color: var(--font-color);
   font-family: var(--paragraph-font);
   text-align: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 li {
@@ -19,14 +35,17 @@ h2 {
   text-align: center;
 }
 
+p {
+  color: var(--font-color);
+}
+
 header {
   /* Layout */
   height: 7vh;
   /* Deco */
   list-style-type: none;
-  border: 3px solid #FAFAFA;
-  border-radius: 1vw;
-  background: #305A72;
+  border: 3px solid var(--accents);
+  background: var(--semi-background-color);
   font-family: var(--heading-font);
   /* Flex Settings */
   display: flex;
@@ -34,9 +53,46 @@ header {
   align-items: center;
 }
 
-a {
+button {
+  width: 4vw;
+  height: 5vh;
+  background-color: #555;
+  color: var(--accents);
+  font-family: var(--paragraph-font);
+  font-size: 1rem;
+  border: 3px solid black;
+  border-style: inset;
+  appearance: none;
+}
+
+form {
+  max-width: 450px;
+  background: var(--semi-background-color);
+  padding: 30px;
+  margin: 50px auto;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+  border: 3px solid var(--accents);
+}
+
+footer {
+  height: 5vh;
+}
+
+/* CLASS STYLING */
+.card {
+  width: 40%;
+  max-width: 450px;
+  background: var(--semi-background-color);
+  color: var(--font-color);
+  padding: 30px;
+  margin: 50px auto;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+  border: 3px solid var(--accents);
+}
+
+.nav-link {
   font-size: 30px;
-  color: #FAFAFA;
+  color: var(--font-color);
   font-weight: 400;
   display: inline;
   line-height: 50px;
@@ -44,14 +100,103 @@ a {
   text-decoration: none;
 }
 
-form {
-  max-width: 450px;
-  background: #FAFAFA;
-  padding: 30px;
-  margin: 50px auto;
-  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-  border-radius: 10px;
-  border: 6px solid #305A72;
+/* .delBtn {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+} */
+
+.dev-card {
+  border-radius: .5vw;
+}
+
+.highlight {
+  color: var(--accents);
+}
+
+/* ID STYLING */
+#intro-paragraph {
+  width: 55%;
+  margin: 0 auto;
+  font-size: large;
+}
+
+#code-conflict-title {
+  color: var(--accents);
+}
+
+#dev-card-name {
+  color: var(--accents);
+}
+
+#logoutBtn {
+  color: #ff1111;
+  text-decoration: underline;
+}
+
+#moves-container {
+  /* Layout */
+  width: 80%;
+  margin: 0 auto;
+  /* Flex Settings */
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#welcome-back {
+  margin-top: 3vh;
+  font-size: 3rem;
+}
+
+#profile-username {
+  color: var(--accents);
+}
+
+
+#home-lower-section {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#chatspace {
+  height: 50vh;
+  width: 50vw;
+  border: 3px solid white;
+  background: var(--semi-background-color);
+  margin: 0 4vw;
+  overflow: auto;
+  color: var(--font-color)
+}
+
+#message-input {
+  width: 20vw;
+}
+
+#chat-message {
+  text-align: left;
+  margin: .5vh;
+  margin-left: 1vw;
+}
+
+#contact-us {
+  color: darksalmon;
+  font-weight: 700;
+}
+
+#btn {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 input[type=text],
@@ -74,50 +219,4 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-}
-
-#btn {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid black;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.card {
-  max-width: 450px;
-  background: #FAFAFA;
-  padding: 30px;
-  margin: 50px auto;
-  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-  border-radius: 10px;
-  border: 6px solid brown;
-}
-
-.delBtn {
-  width: 30%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid black;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-footer {
-  height: 5vh;
-}
-
-#chatspace {
-  height: 50vh;
-  width: 50vw;
-  border: 3px solid black;
-  background: white;
-  margin: 0 auto;
-}
-
-#message-input {
-  width: 20vw;
 }
