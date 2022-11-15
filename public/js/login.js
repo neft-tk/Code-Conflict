@@ -13,6 +13,7 @@ loginForm.addEventListener("submit",e=>{
         }
     }).then(res=>{
         if(res.ok){
+            alert("Login successful.")
            location.reload()
         } else {
             alert("Your Username or Password was incorrect. Try again.")
