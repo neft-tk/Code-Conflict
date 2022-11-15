@@ -1,18 +1,19 @@
-<h1>This is my profile page! Welcome back, {{name}}</h1>
+<h1 id="welcome-back">Welcome back, <span id="profile-username">{{name}}</span></h1>
 <h2 id="dev">My Devs:</h2>
 {{#each Devs}}
-    <div class="card">
-        <h3>Name: {{name}}</h3>
-        <p>ID: {{id}}</p>
-        <p>Level: {{level}}</p>
-        <p>Current Experience Points: {{current_exp}}</p>
-        <p>Alignment: {{alignment}}</p>
-        <p>Health Points: {{hp}}</p>
-        <p>Attack: {{attack}}</p>
-        <p>Speed: {{speed}}</p>
-        <button class="delBtn" data-devId="{{id}}">Delete Me</button>
-    </div>
-    <h3>{{name}}'s Movelist:</h3>
+<div class="card">
+    <h3>Name: {{name}}</h3>
+    <p>ID: {{id}}</p>
+    <p>Level: {{level}}</p>
+    <p>Current Experience Points: {{current_exp}}</p>
+    <p>Alignment: {{alignment}}</p>
+    <p>Health Points: {{hp}}</p>
+    <p>Attack: {{attack}}</p>
+    <p>Speed: {{speed}}</p>
+    <button class="delBtn" data-devId="{{id}}">Delete Me</button>
+</div>
+<h3>{{name}}'s Movelist:</h3>
+<div id="moves-container">
     {{#each Moves}}
     <div class="card">
         <p>Move Name: {{name}}</p>
@@ -20,7 +21,8 @@
         <p>Accuracy: {{accuracy}}</p>
     </div>
     {{/each}}
-    <hr>
+</div>
+<hr>
 {{/each}}
 
 <script src="/js/profile.js"></script>
