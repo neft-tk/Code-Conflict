@@ -1,8 +1,8 @@
 <h1 id="welcome-back">Welcome back, <span id="profile-username">{{name}}</span></h1>
 <h2 id="dev">My Devs:</h2>
 {{#each Devs}}
-<div class="card">
-    <h3>Name: {{name}}</h3>
+<div class="card dev-card">
+    <h3>Name: <span id="dev-card-name">{{name}}</span></h3>
     <p>ID: {{id}}</p>
     <p>Level: {{level}}</p>
     <p>Current Experience Points: {{current_exp}}</p>
@@ -16,7 +16,7 @@
 <div id="moves-container">
     {{#each Moves}}
     <div class="card">
-        <p>Move Name: {{name}}</p>
+        <p>Move Name: <span class='highlight'>{{name}}</span></p>
         <p>Power: {{power}}</p>
         <p>Accuracy: {{accuracy}}</p>
     </div>

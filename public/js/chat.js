@@ -21,8 +21,7 @@ socket.on("connect_error", (err) => {
 });
 
 // When the form is submitted (send button is clicked)
-form.addEventListener("submit", event => {
-    console.log("seen")
+form.addEventListener("submit", event => {  
     // Prevent default
     event.preventDefault()
     // Store the value of user input

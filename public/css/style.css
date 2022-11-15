@@ -1,16 +1,18 @@
 /* ROOT VARIABLES */
 :root {
   /* FONTS */
-  --heading-font: 'Bebas Neue', cursive;
-  /* --paragraph-font: 'Poppins', sans-serif; */
+  --heading-font: 'Lato', cursive;
   --paragraph-font: 'Consolas', sans-serif;
   --console-font: "lucida console";
   /* COLORS */
-  --true-background-color: #000012;
-  --semi-background-color: #222;
+  --true-background-color: #222;
+  --semi-background-color: #333;
   --font-color: #E6EAFF;
-  --accents: #00aa14;
+  --accents: #00e21a;
   /* SIZES */
+  --heading-size: ;
+  --paragraph-size: ;
+  --hero-size: ;
 }
 
 /* ELEMENT STYLING */
@@ -43,7 +45,6 @@ header {
   /* Deco */
   list-style-type: none;
   border: 3px solid var(--accents);
-  border-radius: 1vw;
   background: var(--semi-background-color);
   font-family: var(--heading-font);
   /* Flex Settings */
@@ -52,19 +53,31 @@ header {
   align-items: center;
 }
 
+button {
+  width: 4vw;
+  height: 5vh;
+  background-color: #555;
+  color: var(--accents);
+  font-family: var(--paragraph-font);
+  font-size: 1rem;
+  border: 3px solid black;
+  border-style: inset;
+  appearance: none;
+}
+
 form {
   max-width: 450px;
   background: var(--semi-background-color);
   padding: 30px;
   margin: 50px auto;
   box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-  border-radius: 10px;
   border: 3px solid var(--accents);
 }
 
 footer {
   height: 5vh;
 }
+
 /* CLASS STYLING */
 .card {
   width: 40%;
@@ -74,7 +87,6 @@ footer {
   padding: 30px;
   margin: 50px auto;
   box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-  border-radius: 10px;
   border: 3px solid var(--accents);
 }
 
@@ -88,7 +100,7 @@ footer {
   text-decoration: none;
 }
 
-.delBtn {
+/* .delBtn {
   width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -96,6 +108,14 @@ footer {
   border: 1px solid black;
   border-radius: 4px;
   box-sizing: border-box;
+} */
+
+.dev-card {
+  border-radius: .5vw;
+}
+
+.highlight {
+  color: var(--accents);
 }
 
 /* ID STYLING */
@@ -103,6 +123,19 @@ footer {
   width: 55%;
   margin: 0 auto;
   font-size: large;
+}
+
+#code-conflict-title {
+  color: var(--accents);
+}
+
+#dev-card-name {
+  color: var(--accents);
+}
+
+#logoutBtn {
+  color: #ff1111;
+  text-decoration: underline;
 }
 
 #moves-container {
@@ -134,7 +167,7 @@ footer {
 #chatspace {
   height: 50vh;
   width: 50vw;
-  border: 3px solid black;
+  border: 3px solid white;
   background: var(--semi-background-color);
   margin: 0 4vw;
   overflow: auto;

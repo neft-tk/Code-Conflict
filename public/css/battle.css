@@ -1,18 +1,3 @@
-/* ROOT VARIABLES */
-:root {
-    /* FONTS */
-    --heading-font: 'Bebas Neue', cursive;
-    /* --paragraph-font: 'Poppins', sans-serif; */
-    --paragraph-font: 'Consolas', sans-serif;
-    --console-font: "lucida console";
-    /* COLORS */
-    --true-background-color: #00001A;
-    --semi-background-color: #424242;
-    --font-color: #E6EAFF;
-    --accents: #FFFF00;
-    /* SIZES */
-  }
-
 /* MACRO BATTLE LAYOUT */
 
 #battle-container {
@@ -25,7 +10,6 @@
     width: 80vw;
     margin: 0 auto;
     /* Deco */
-    border: 1px solid black;
     /* Flex Settings */
     display: flex;
     flex-direction: row;
@@ -38,7 +22,6 @@
     width: 67%;
     height: 100%;
     /* deco */
-    border: 1px solid black;
     /* Flex Settings */
     display: flex;
     flex-direction: column;
@@ -51,7 +34,6 @@
     width: 80%;
     height: 30%;
     /* deco */
-    /* border: 1px solid black; */
     /* Flex Settings */
     display: flex;
     flex-direction: row;
@@ -64,7 +46,6 @@
     width: 100%;
     height: 70%;
     /* deco */
-    /* border: 1px solid black; */
     /* Flex Settings */
     display: flex;
     justify-content: space-evenly;
@@ -81,7 +62,6 @@
     width: 33%;
     height: 100%;
     /* deco */
-    border: 1px solid black;
     /* /* flex settings */
     display: flex;
     justify-content: space-evenly;
@@ -105,7 +85,6 @@
     width: 80vw;
     margin: 0 auto;
     /* Deco */
-    border: 1px solid black;
     /* Flex Settings */
     display: flex;
     justify-content: space-evenly;
@@ -118,7 +97,6 @@
     width: 67%;
     height: 100%;
     /* Deco */
-    border: 1px solid black;
     /* Flex Settings */
     display: flex;
     justify-content: space-around;
@@ -142,7 +120,7 @@
     width: 45%;
     height: 45%;
     /* Deco */
-    border-radius: 1vw;
+    border-radius: .5vh;
 }
 
 /* USER STATS SECTION */
@@ -151,7 +129,6 @@
     width: 33%;
     height: 100%;
     /* Deco */
-    border: 1px solid black;
     /* Flex Settings */
     display: flex;
     align-items: center;
