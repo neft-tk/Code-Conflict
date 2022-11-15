@@ -1,6 +1,17 @@
+/* ROOT VARIABLES */
 :root {
-
-}
+    /* FONTS */
+    --heading-font: 'Bebas Neue', cursive;
+    /* --paragraph-font: 'Poppins', sans-serif; */
+    --paragraph-font: 'Consolas', sans-serif;
+    --console-font: "lucida console";
+    /* COLORS */
+    --true-background-color: #00001A;
+    --semi-background-color: #424242;
+    --font-color: #E6EAFF;
+    --accents: #FFFF00;
+    /* SIZES */
+  }
 
 /* MACRO BATTLE LAYOUT */
 
@@ -81,9 +92,10 @@
     /* Layout */
     height: 95%;
     width: 95%;
+    overflow: auto;
     /* Deco */
-    background-color: gray;
-    /* border: 1px solid black; */
+    background-color: #222;
+    border: 3px solid var(--accents);
     /* Flex Settings */
 }
 

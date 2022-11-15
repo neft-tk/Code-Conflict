@@ -5,11 +5,18 @@
   /* --paragraph-font: 'Poppins', sans-serif; */
   --paragraph-font: 'Consolas', sans-serif;
   --console-font: "lucida console";
+  /* COLORS */
+  --true-background-color: #00001A;
+  --semi-background-color: #424242;
+  --font-color: #E6EAFF;
+  --accents: #FFFF00;
+  /* SIZES */
 }
 
 /* ELEMENT STYLING */
 body {
-  background: lightcyan;
+  background: var(--true-background-color);
+  color: var(--font-color);
   font-family: var(--paragraph-font);
   text-align: center;
 }
@@ -26,14 +33,18 @@ h2 {
   text-align: center;
 }
 
+p {
+  color: var(--font-color);
+}
+
 header {
   /* Layout */
   height: 7vh;
   /* Deco */
   list-style-type: none;
-  border: 3px solid #FAFAFA;
+  border: 3px solid var(--accents);
   border-radius: 1vw;
-  background: #305A72;
+  background: var(--semi-background-color);
   font-family: var(--heading-font);
   /* Flex Settings */
   display: flex;
@@ -43,12 +54,12 @@ header {
 
 form {
   max-width: 450px;
-  background: #FAFAFA;
+  background: var(--semi-background-color);
   padding: 30px;
   margin: 50px auto;
   box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
   border-radius: 10px;
-  border: 6px solid #305A72;
+  border: 3px solid var(--accents);
 }
 
 footer {
@@ -56,18 +67,20 @@ footer {
 }
 /* CLASS STYLING */
 .card {
+  width: 40%;
   max-width: 450px;
-  background: #FAFAFA;
+  background: var(--semi-background-color);
+  color: var(--font-color);
   padding: 30px;
   margin: 50px auto;
   box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
   border-radius: 10px;
-  border: 6px solid brown;
+  border: 3px solid var(--accents);
 }
 
 .nav-link {
   font-size: 30px;
-  color: #FAFAFA;
+  color: var(--font-color);
   font-weight: 400;
   display: inline;
   line-height: 50px;
@@ -92,6 +105,18 @@ footer {
   font-size: large;
 }
 
+#moves-container {
+  /* Layout */
+  width: 80%;
+  margin: 0 auto;
+  /* Flex Settings */
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+
 #home-lower-section {
   display: flex;
   justify-content: space-evenly;
@@ -101,9 +126,10 @@ footer {
   height: 50vh;
   width: 50vw;
   border: 3px solid black;
-  background: white;
+  background: var(--semi-background-color);
   margin: 0 4vw;
   overflow: auto;
+  color: var(--font-color)
 }
 
 #message-input {
@@ -152,5 +178,3 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
-
