@@ -6,10 +6,10 @@
   --paragraph-font: 'Consolas', sans-serif;
   --console-font: "lucida console";
   /* COLORS */
-  --true-background-color: #00001A;
-  --semi-background-color: #424242;
+  --true-background-color: #000012;
+  --semi-background-color: #222;
   --font-color: #E6EAFF;
-  --accents: #FFFF00;
+  --accents: #00aa14;
   /* SIZES */
 }
 
@@ -114,6 +114,15 @@ footer {
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: center;
+}
+
+#welcome-back {
+  margin-top: 3vh;
+  font-size: 3rem;
+}
+
+#profile-username {
+  color: var(--accents);
 }
 
 
