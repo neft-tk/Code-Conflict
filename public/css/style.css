@@ -9,6 +9,7 @@
   --semi-background-color: #333;
   --font-color: #E6EAFF;
   --accents: #00e21a;
+  --attention: #ff1111;
   /* SIZES */
   --heading-size: ;
   --paragraph-size: ;
@@ -16,11 +17,16 @@
 }
 
 /* ELEMENT STYLING */
+html {
+  background: var(--true-background-color);
+}
+
 body {
   background: var(--true-background-color);
   color: var(--font-color);
   font-family: var(--paragraph-font);
   text-align: center;
+  margin: 0;
 }
 
 a {
@@ -55,6 +61,7 @@ header {
 
 button {
   width: 4vw;
+  min-width: 100px;
   height: 5vh;
   background-color: #555;
   color: var(--accents);
@@ -118,6 +125,13 @@ footer {
   color: var(--accents);
 }
 
+.creationForm {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  align-items: center;
+}
+
 /* ID STYLING */
 #intro-paragraph {
   width: 55%;
@@ -134,7 +148,7 @@ footer {
 }
 
 #logoutBtn {
-  color: #ff1111;
+  color: var(--attention);
   text-decoration: underline;
 }
 
@@ -190,7 +204,7 @@ footer {
 }
 
 #btn {
-  width: 100%;
+  width: 75%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -199,20 +213,18 @@ footer {
   box-sizing: border-box;
 }
 
-input[type=text],
-select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+#selectDev {
+  margin-bottom: 62vh;
 }
 
-input[type=password],
-select {
-  width: 100%;
+button:hover {
+  transform: scale(1.05);
+  transition: 0.1s, ease-in-out;
+}
+
+input, select {
+  font: var(--paragraph-font);
+  width: 75%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
