@@ -11,6 +11,16 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/check", (req, res) => {
+  const currentSession = req.session.user_id;
+  User.findByPk(currentSession)
+  .then((user) => {
+    return res.json(user);
+  }).catch((err) => {
+    res.json({err:err})
+  })
+})
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
