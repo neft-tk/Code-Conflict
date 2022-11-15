@@ -1,6 +1,5 @@
 // Current User
-let user;
-
+let userName;
 // The message text box
 const messageInput = document.getElementById("message-input");
 // The whole form (the submit handler is on the send message button)
@@ -26,8 +25,8 @@ socket.on("connect", async () => {
     displayMessage(`Welcome to the chatroom (ID: ${socket.id})`)
 })
 
-socket.on("recieve-message", message => {
-    displayMessage(message);
+socket.on("recieve-message", (message, user) => {
+    displayMessage(message, user);
 })
 
 socket.on("connect_error", (err) => {
@@ -41,7 +40,7 @@ form.addEventListener("submit", async event => {
     // Store the value of user input
     const message = messageInput.value;
     // If the user is not logged in.
-    if (user === "???") {
+    if (userName === "???") {
         // Dont let them chat.
         alert("You must be logged in to chat!")
         messageInput.value = "";
@@ -53,16 +52,16 @@ form.addEventListener("submit", async event => {
         return;
     }
     // Display the message to the chatspace
-    displayMessage(message)
+    displayMessage(message, userName)
     // After we display the message, send the message to the backend. Add a room if we want the message to only go to a specific room.
-    socket.emit("send-message", message)
+    socket.emit("send-message", message, userName)
     // Show the message on the browser console.
     console.log(message);
     // Reset the input field
     messageInput.value = ""
 })
 
-function displayMessage(message) {
+function displayMessage(message, user) {
     // Create new div
     const div = document.createElement("div");
     const hr = document.createElement("hr")
