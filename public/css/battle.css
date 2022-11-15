@@ -159,9 +159,16 @@
     100% { transform: rotate(0deg); }
 }
 
+@keyframes font-grow {
+    0% { font-size: 100%;}
+    50% { font-size: 150%;}
+    100% { font-size: 100%;}
+}
+
 #player-moves button:focus {
     color: var(--attention);
-    animation-name: tilt-shaking;
+    animation-name: tilt-shaking, font-grow;
     animation-duration: 0.5s;
-    transition: 0.1s, ease-in-out;
+    /* font-size: 200%; */
+    transition: 2s, ease-in-out;
 }
