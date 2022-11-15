@@ -48,10 +48,11 @@ io.on("connection", socket => {
 
   // .on referencing the custom event we declared on the client side and any parameters we included.
   // In this case we are checking for message content and the room they intend the message for.
-  socket.on("send-message", (message) => {
-      socket.broadcast.emit("recieve-message", message);
+  socket.on("send-message", (message, user) => {
+      socket.broadcast.emit("recieve-message", message, user);
       // Console log the message serverside.
-      console.log(message)
+      console.log(message);
+      console.log(user);
   })
 })
 
