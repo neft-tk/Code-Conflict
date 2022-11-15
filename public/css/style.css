@@ -2,7 +2,8 @@
 :root {
   /* FONTS */
   --heading-font: 'Bebas Neue', cursive;
-  --paragraph-font: 'Poppins', sans-serif;
+  /* --paragraph-font: 'Poppins', sans-serif; */
+  --paragraph-font: 'Consolas', sans-serif;
   --console-font: "lucida console";
 }
 
