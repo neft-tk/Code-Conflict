@@ -1,32 +1,16 @@
+// Required Packages
 const express = require('express');
 const session = require('express-session');
-const path = require('path');
 const http = require('http');
-const socketIo = require("socket.io");
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
 const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const app = express();
 const cors = require("cors")
+// Initialize some stuff
+const app = express();
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// Declare a port.
 const PORT = process.env.PORT || 3000;
-
-// Create our Socket.io instance serverside with port and options object
-// ???????????????????????????????
-// const io = require("socket.io")(PORT, {
-//   // Options object telling cors that its ok if people connect via 8080 even though we are hosted on 3000
-//   cors: {
-//       origin: ["https://code-conflict.herokuapp.com/"],
-//   },
-// }
-// );
-
-// MIDDLEWARE
-app.use(express.static("public"))
-
-const hbs = exphbs.create({});
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
 
 const sess = {
   secret: process.env.SESSION_SECRET,
@@ -40,24 +24,21 @@ const sess = {
   })
 };
 
+// MIDDLEWARE
+app.use(express.static("public"))
+const hbs = exphbs.create({});
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 app.use(cors());
-
 app.use(session(sess));
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(routes);
 
+// Create http server with our express instance
 let server = http.createServer(app);
+// Connect our socket instance to our server.
 const io = require("socket.io")(server)
-
-// app.use(cors())
-
-
-
-// let io = socketIo
-
 
 // On a succesfull connection to our declared port (8080)
 io.on("connection", socket => {
