@@ -15,10 +15,10 @@ socket.on("connect", async () => {
         .then((response) => response.json())
         .then((data) => {
             if (data !== null) {
-                user = data.name
+                userName = data.name
                 return;
             } else {
-                user = "???"
+                userName = "???"
                 return;
             }
         });
