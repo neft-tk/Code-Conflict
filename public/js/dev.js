@@ -48,7 +48,7 @@ createMoveForm.addEventListener("submit",e=>{
         name:document.querySelector("#createMoveName").value,
         power:document.querySelector("#createMovePower").value,
         accuracy:document.querySelector("#createMoveAccuracy").value,
-        DevId:document.querySelector("#chooseDev").value,
+        DevId:document.querySelector("#devOptions").value,
     }
 
     console.log(moveObj);
