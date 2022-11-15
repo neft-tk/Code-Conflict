@@ -36,7 +36,16 @@ router.get("/manageDev",(req,res)=>{
     if(!req.session.logged_in){
         return res.redirect("/profile")
     }
-    res.render("dev")
+    User.findByPk(req.session.user_id,{
+        include:[Dev]
+    }).then(user=>{
+        const devHbsData = user.get({plain:true});
+        console.log(user);
+        console.log("==============")
+        console.log(devHbsData)
+        devHbsData.logged_in=req.session.logged_in
+        res.render("dev",devHbsData)
+    })
 })
 
 router.get("/battleSetup",(req,res)=>{

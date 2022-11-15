@@ -1,7 +1,6 @@
 const loginForm = document.querySelector("#login");
 loginForm.addEventListener("submit",e=>{
     e.preventDefault();
-    console.log('PREVENTED DEFAULT!')
     const userObj = {
         email:document.querySelector("#loginEmail").value,
         password:document.querySelector("#loginPassword").value,
@@ -16,7 +15,8 @@ loginForm.addEventListener("submit",e=>{
         if(res.ok){
            location.reload()
         } else {
-            alert("trumpet sound")
+            alert("Your Username or Password was incorrect. Try again.")
+            location.reload()
         }
     })
 })

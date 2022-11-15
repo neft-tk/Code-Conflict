@@ -22,7 +22,7 @@ socket.on("connect", async () => {
                 return;
             }
         });
-    displayMessage(`Welcome to the chatroom (ID: ${socket.id})`)
+    displayMessage(`Welcome to the chatroom (ID: ${socket.id})`, userName)
 })
 
 socket.on("recieve-message", (message, user) => {
