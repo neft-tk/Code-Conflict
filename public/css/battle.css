@@ -150,3 +150,18 @@
     transform: translateY(-2px);
     transition: 0.1s, ease-in-out;
 }
+
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+#player-moves button:focus {
+    color: var(--attention);
+    animation-name: tilt-shaking;
+    animation-duration: 2s;
+    transition: 0.1s, ease-in-out;
+}
