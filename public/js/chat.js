@@ -55,7 +55,7 @@ form.addEventListener("submit", async event => {
     // Display the message to the chatspace
     displayMessage(message)
     // After we display the message, send the message to the backend. Add a room if we want the message to only go to a specific room.
-    socket.emit("send-message", message, user)
+    socket.emit("send-message", message)
     // Show the message on the browser console.
     console.log(message);
     // Reset the input field
@@ -69,7 +69,7 @@ function displayMessage(message) {
     // Add an id for styling
     div.setAttribute("id", "chat-message")
     // Fill it with the message from the input field
-    div.textContent = user + ": " + message;
+    div.textContent = `${user}: ${message}`;
     // Append it to the chatspace.
     document.getElementById("chatspace").append(div)
     document.getElementById("chatspace").append(hr)
