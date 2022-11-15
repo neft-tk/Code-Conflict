@@ -1,3 +1,4 @@
+/* ROOT VARIABLES */
 :root {
   /* FONTS */
   --heading-font: 'Bebas Neue', cursive;
@@ -5,10 +6,15 @@
   --console-font: "lucida console";
 }
 
+/* ELEMENT STYLING */
 body {
   background: lightcyan;
   font-family: var(--paragraph-font);
   text-align: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 li {
@@ -34,7 +40,31 @@ header {
   align-items: center;
 }
 
-a {
+form {
+  max-width: 450px;
+  background: #FAFAFA;
+  padding: 30px;
+  margin: 50px auto;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  border: 6px solid #305A72;
+}
+
+footer {
+  height: 5vh;
+}
+/* CLASS STYLING */
+.card {
+  max-width: 450px;
+  background: #FAFAFA;
+  padding: 30px;
+  margin: 50px auto;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  border: 6px solid brown;
+}
+
+.nav-link {
   font-size: 30px;
   color: #FAFAFA;
   font-weight: 400;
@@ -44,14 +74,60 @@ a {
   text-decoration: none;
 }
 
-form {
-  max-width: 450px;
-  background: #FAFAFA;
-  padding: 30px;
-  margin: 50px auto;
-  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-  border-radius: 10px;
-  border: 6px solid #305A72;
+.delBtn {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* ID STYLING */
+#intro-paragraph {
+  width: 55%;
+  margin: 0 auto;
+  font-size: large;
+}
+
+#home-lower-section {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#chatspace {
+  height: 50vh;
+  width: 50vw;
+  border: 3px solid black;
+  background: white;
+  margin: 0 4vw;
+  overflow: auto;
+}
+
+#message-input {
+  width: 20vw;
+}
+
+#chat-message {
+  text-align: left;
+  margin: .5vh;
+  margin-left: 1vw;
+}
+
+#contact-us {
+  color: darksalmon;
+  font-weight: 700;
+}
+
+#btn {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 input[type=text],
@@ -76,48 +152,4 @@ select {
   box-sizing: border-box;
 }
 
-#btn {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid black;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
 
-.card {
-  max-width: 450px;
-  background: #FAFAFA;
-  padding: 30px;
-  margin: 50px auto;
-  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-  border-radius: 10px;
-  border: 6px solid brown;
-}
-
-.delBtn {
-  width: 30%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid black;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-footer {
-  height: 5vh;
-}
-
-#chatspace {
-  height: 50vh;
-  width: 50vw;
-  border: 3px solid black;
-  background: white;
-  margin: 0 auto;
-}
-
-#message-input {
-  width: 20vw;
-}

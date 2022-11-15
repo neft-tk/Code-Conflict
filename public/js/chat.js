@@ -9,7 +9,7 @@ const socket = io();
 
 // When somebody connects to the socket, print a connection message to chatspace with their socket id.
 socket.on("connect", () => {
-    displayMessage(`${socket.id} has joined the chatroom`)
+    displayMessage(`Welcome to the chatroom! (ID: ${socket.id})`)
 })
 
 socket.on("recieve-message", message => {
@@ -44,8 +44,12 @@ form.addEventListener("submit", event => {
 function displayMessage(message) {
     // Create new div
     const div = document.createElement("div");
+    const hr = document.createElement("hr")
+    // Add an id for styling
+    div.setAttribute("id", "chat-message")
     // Fill it with the message from the input field
     div.textContent = message;
     // Append it to the chatspace.
     document.getElementById("chatspace").append(div)
-}
+    document.getElementById("chatspace").append(hr)
+}   
