@@ -12,11 +12,11 @@ loginForm.addEventListener("submit",e=>{
             "Content-Type":"application/json"
         }
     }).then(res=>{
-        if(res == true){
+        if(res.ok){
             alert("Login successful.")
             location.reload()
         } else {
-            alert("Your Username or Password was incorrect. Try again.3")
+            alert("Your Username or Password was incorrect. Try again.")
             location.reload()
         }
     })
